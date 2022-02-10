@@ -6,9 +6,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./CSS/formStyle.css">
-    <script src="./JS/form.js" defer></script>
 </head>
 <body>
-    
+    <div id="chooseLang">
+    <h5>
+        Preferred Language / Idioma Preferido: 
+        <a href="#eng" data-reload>English</a>
+         / 
+         <a href="#es" data-reload>Español</a>
+    </h5>
+
+    <div id="formInstructions">
+    <h2>Please fill out the following form:</h2>
+    <h5>* Note: All fields are required to be filled out in order to submit form.</h5>
+    </div>
+
+    <form target="_self" method="post" autocomplete="on">
+        <div id="clientContactInfo">
+            <h3 id="contactHeader">Contact Info</h3>
+
+            <label for="salutation">Salutation: </label>
+            <select id="salutation" name="salutation">
+                <option value="dr.">Dr.</option>
+                <option value="miss">Miss</option>
+                <option value="mr.">Mr.</option>
+                <option value="mrs.">Mrs.</option>
+                <option value="ms.">Ms.</option>
+                <option value="mx.">Mx.</option>
+            </select> 
+            <br>
+
+            <label for="fName">First Name: </label>
+            <input type="text" id="fName" name="fName" placeholder="Jane" required>
+            <br>
+
+            <label for="lName">Last Name: </label>
+            <input type="text" id="lName" name="lName" placeholder="Doe" required>
+            <br>
+
+            <label for="adr">Address: </label>
+            <input type="text" id="adr" name="address" placeholder="123 N. Las Vegas Blvd." required>
+            <br>
+
+            <label for="city">City: </label>
+            <input type="text" id="city" name="city" placeholder="North Las Vegas" required>
+            <br>
+
+            <label for="state">State: </label>
+            <input type="text" id="state" name="state" placeholder="NV">
+            <br>
+
+            <label for="zip">Zip Code: </label>
+            <input type="text" id="zip" name="zip" placeholder="89030" required>
+            <br>
+
+            <label for="phone">Phone Number: </label>
+            <input type="text" id="phone" name="phone" placeholder="XXX-XXXX" required>
+            <br>
+
+            <label for="email">Email: </label>
+            <input type="text" id="email" name="email" placeholder="jane.doe@example.com" required>
+            <br>
+
+        </div>
+
+        <div id="incidentInfo">
+            <h3 id="incidentHeader">Incident Information</h3>
+
+            <label for="who">Who? (Full name if possible): </label>
+            <input type="text" id="who" name="who" placeholder="John Doe" required>
+            <br>
+
+            <label for="what">What?: </label>
+            <br>
+            <textarea id="what" name="what" maxlength="2000" required></textarea>
+            <br>
+
+            <label for="incidentCity iState">Where?: </label>
+            <label for="incidentCity">City: </label>
+            <input type="text" id="iCity" name="whereCity" placeholder="Las Vegas" required>
+            <label for="incidentState">State: </label>
+            <input type="text" id="incidentState" name="whereState" placeholder="NV" required>
+            <br>
+
+            <label for="incidentDate">When?: </label>
+            <input type="date" id="incidentDate" name="incidentDate" required>
+            <br>
+
+        </div>
+
+        <div id="addQuestions">
+            <h3 id="addQuestionsHeader">Additional Questions</h3>
+
+            <p id="witnessQuestion">Do you have a witness?</p>
+            <input type="radio" id="yWitness" name="witness" value="yesWitness">
+            <label for="yWitness">Yes</label><br>
+
+            <input type="radio" id="nWitness" name="witness" value="noWitness">
+            <label for="nWitness">No</label><br>
+
+            <div id="witnessInfo">
+                <p id="witnessHeader">Witness': </p>
+
+                <label for="wFirstName">First Name: </label>
+                <input type="text" id="wFirstName" name="witnessFirstName" placeholder="Jane" required>
+
+                <label for="wLastName">Last Name: </label>
+                <input type="text" id="wLastName" name="witnessLastName" placeholder="Doe" required>
+                <br>
+
+                <label for="wPhone">Phone: </label>
+                <input type="text" id="wPhone" name="witnessPhone" placeholder="XXX-XXXX" required>
+
+            </div>
+
+            <p id="attorneyQuestion">Do you have an attorney?</p>
+            <input type="radio" id="yAttorney" name="attorney" value="yesAttorney">
+            <label for="yAttorney">Yes</label><br>
+
+            <input type="radio" id="nAttorney" name="attorney" value="noAttorney">
+            <label for="nAttorney">No</label>
+
+            <div id="attorneyInfo">
+                <p id="attorneyHeader">Attorney's: </p>
+
+                <label for="aName">Full Name: </label>
+                <input type="text" id="aName" name="attorneyFullName" placeholder="John M. Doe" required><br>
+
+                <label for="aPractice">Practice Name: </label>
+                <input type="text" id="aPractice" name="attorneyPracticeName" placeholder="John M. Doe Law Group, LLC" required><br>
+
+                <label for="aWebsite">Website: </label>
+                <input type="url" id="aWebsite" name="attorneyWebsite" placeholder="https://example.com/" required><br>
+
+            </div>
+
+        </div>
+    </form>
+
+    <script src="./JS/form.js" defer></script>
+    </div>
 </body>
 </html>
