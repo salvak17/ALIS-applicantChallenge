@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./CSS/formStyle.css">
 </head>
 <body>
+    <!-- Able to choose instruction and form language in English or Spanish -->
     <div id="chooseLang">
     <h5>
         Preferred Language / Idioma Preferido: 
@@ -16,12 +17,16 @@
          <a href="#es" data-reload>Español</a>
     </h5>
 
+    <!-- Form instructions telling user to fill out all fields -->
     <div id="formInstructions">
     <h2>Please fill out the following form:</h2>
     <h5>* Note: All fields are required to be filled out in order to submit form.</h5>
     </div>
 
+    <!-- Created form to obtain user/client info, incident info, witness info, and attorney info -->
+    <!-- Form response will display in same frame so it could be sent to a typical API endpoint -->
     <form target="_self" method="post" autocomplete="on">
+        <!-- This section of form will collect contact info of user/client -->
         <div id="clientContactInfo">
             <h3 id="contactHeader">Contact Info</h3>
 
@@ -68,8 +73,19 @@
             <input type="text" id="email" name="email" placeholder="jane.doe@example.com" required>
             <br>
 
+            <!-- 
+                fName is user/client's first name
+                lName is user/client's last name
+                adr is user/client's address
+                city is user/client's city
+                state is user/client's state
+                zip is user/client's zip code
+                phone is user/client's phone number
+                email is user/client's email address
+             -->
         </div>
 
+        <!-- This section of form will collect incident info -->
         <div id="incidentInfo">
             <h3 id="incidentHeader">Incident Information</h3>
 
@@ -82,19 +98,27 @@
             <textarea id="what" name="what" maxlength="2000" required></textarea>
             <br>
 
-            <label for="incidentCity iState">Where?: </label>
-            <label for="incidentCity">City: </label>
-            <input type="text" id="iCity" name="whereCity" placeholder="Las Vegas" required>
-            <label for="incidentState">State: </label>
-            <input type="text" id="incidentState" name="whereState" placeholder="NV" required>
+            <label for="iCity iState">Where?: </label>
+            <label for="iCity">City: </label>
+            <input type="text" id="iCity" name="incidentCity" placeholder="Las Vegas" required>
+            <label for="iState">State: </label>
+            <input type="text" id="incidentState" name="incidentState" placeholder="NV" required>
             <br>
 
-            <label for="incidentDate">When?: </label>
-            <input type="date" id="incidentDate" name="incidentDate" required>
+            <label for="iDate">When?: </label>
+            <input type="date" id="iDate" name="incidentDate" required>
             <br>
 
+            <!--
+                who is the name of the individual this incident is about
+                what is the incident itself in no more than 2000 characters
+                iCity is for the incident city's name
+                iState is for the incident state's name
+                iDate is for the incident date, which should default to today's date
+            -->
         </div>
 
+        <!-- This section of form will collect witness and attorney info -->
         <div id="addQuestions">
             <h3 id="addQuestionsHeader">Additional Questions</h3>
 
@@ -105,6 +129,7 @@
             <input type="radio" id="nWitness" name="witness" value="noWitness">
             <label for="nWitness">No</label><br>
 
+            <!-- Collect witness info if user selects they have a witness -->
             <div id="witnessInfo">
                 <p id="witnessHeader">Witness': </p>
 
@@ -116,7 +141,7 @@
                 <br>
 
                 <label for="wPhone">Phone: </label>
-                <input type="text" id="wPhone" name="witnessPhone" placeholder="XXX-XXXX" required>
+                <input type="text" id="wPhone" name="witnessPhoneNumber" placeholder="XXX-XXXX" required>
 
             </div>
 
@@ -127,6 +152,7 @@
             <input type="radio" id="nAttorney" name="attorney" value="noAttorney">
             <label for="nAttorney">No</label>
 
+            <!-- Collect attorney info if user selects they have an attorney -->
             <div id="attorneyInfo">
                 <p id="attorneyHeader">Attorney's: </p>
 
@@ -136,11 +162,23 @@
                 <label for="aPractice">Practice Name: </label>
                 <input type="text" id="aPractice" name="attorneyPracticeName" placeholder="John M. Doe Law Group, LLC" required><br>
 
-                <label for="aWebsite">Website: </label>
+                <label for="aWebsite">Website URL: </label>
                 <input type="url" id="aWebsite" name="attorneyWebsite" placeholder="https://example.com/" required><br>
 
             </div>
 
+            <!--
+                yWitness is user has a witness
+                nWitness is user does not have a witness
+                wFirstName is witness' first name
+                wLastName is witness' last name
+                wPhone is witness' phone number
+                yAttorney is user has an attorney
+                nAttorney is user does not have an attorney
+                aName is attorney's full name
+                aPractice is name of attorney's practice
+                aWebsite is attorney's website url
+            -->
         </div>
     </form>
 
