@@ -8,70 +8,62 @@
     <link rel="stylesheet" href="./CSS/formStyle.css">
 </head>
 <body>
-    <!-- Able to choose instruction and form language in English or Spanish -->
-    <div id="chooseLang">
-    <h5>
-        Preferred Language / Idioma Preferido: 
-        <a href="#eng" data-reload>English</a>
-         / 
-         <a href="#es" data-reload>Español</a>
-    </h5>
-
     <!-- Form instructions telling user to fill out all fields -->
     <div id="formInstructions">
-    <h2>Please fill out the following form:</h2>
-    <h5>* Note: All fields are required to be filled out in order to submit form.</h5>
+        <h2 id="formInstHeader">Please fill out the following form: / Por favor llene el siguiente formulario: </h2>
+        <h5 id="formInstNote">* Note: All fields are required to be filled out in order to submit form / Todos los campos son obligatorios para enviar el formulario</h5>
     </div>
 
     <!-- Created form to obtain user/client info, incident info, witness info, and attorney info -->
     <!-- Form response will display in same frame so it could be sent to a typical API endpoint -->
-    <form target="_self" method="post" autocomplete="on">
+    <form method="post" autocomplete="on" name="form1">
         <!-- This section of form will collect contact info of user/client -->
         <div id="clientContactInfo">
-            <h3 id="contactHeader">Contact Info</h3>
+            <h3 class="formSectionHeaders">Contact Information / Información del Contacto</h3>
 
-            <label for="salutation">Salutation: </label>
-            <select id="salutation" name="salutation">
-                <option value="dr.">Dr.</option>
-                <option value="miss">Miss</option>
-                <option value="mr.">Mr.</option>
-                <option value="mrs.">Mrs.</option>
-                <option value="ms.">Ms.</option>
-                <option value="mx.">Mx.</option>
-            </select> 
-            <br>
+            <div class="formSectionBodies">
+                <label for="salutation">Salutation: / Saludo:</label>
+                <select id="salutation" name="salutation">
+                    <option value="dr." id="drSal">Dr.</option>
+                    <option value="miss" id="missSal">Miss / Señorita</option>
+                    <option value="mr." id="mrSal">Mr. / Señor</option>
+                    <option value="mrs." id="mrsSal">Mrs. / Señora</option>
+                    <option value="ms." id="msSal">Ms. / Sra.</option>
+                    <option value="mx." id="mxSal">Mx. / Señore</option>
+                </select> 
+                <br>
 
-            <label for="fName">First Name: </label>
-            <input type="text" id="fName" name="fName" placeholder="Jane" required>
-            <br>
+                <label for="fName">First Name / Primer Nombre: </label>
+                <input type="text" id="fName" name="fName" placeholder="Jane" required>
+                <br>
 
-            <label for="lName">Last Name: </label>
-            <input type="text" id="lName" name="lName" placeholder="Doe" required>
-            <br>
+                <label for="lName">Last Name / Apellido: </label>
+                <input type="text" id="lName" name="lName" placeholder="Doe" required>
+                <br>
 
-            <label for="adr">Address: </label>
-            <input type="text" id="adr" name="address" placeholder="123 N. Las Vegas Blvd." required>
-            <br>
+                <label for="adr">Address / Direcci&oacute;n Ph&iacute;sica: </label>
+                <input type="text" id="adr" name="address" placeholder="123 N. Las Vegas Blvd." required>
+                <br>
 
-            <label for="city">City: </label>
-            <input type="text" id="city" name="city" placeholder="North Las Vegas" required>
-            <br>
+                <label for="city">City / Ciudad: </label>
+                <input type="text" id="city" name="city" placeholder="North Las Vegas" required>
+                <br>
 
-            <label for="state">State: </label>
-            <input type="text" id="state" name="state" placeholder="NV">
-            <br>
+                <label for="state">State / Estado: </label>
+                <input type="text" id="state" name="state" placeholder="NV">
+                <br>
 
-            <label for="zip">Zip Code: </label>
-            <input type="text" id="zip" name="zip" placeholder="89030" required>
-            <br>
+                <label for="zip">Zip Code / C&oacute;digo Postal: </label>
+                <input type="text" id="zip" name="zip" placeholder="89030" required>
+                <br>
 
-            <label for="phone">Phone Number: </label>
-            <input type="text" id="phone" name="phone" placeholder="XXX-XXXX" required>
-            <br>
+                <label for="phone">Phone Number / Numero de Tel&eacute;fono: </label>
+                <input type="text" id="phone" name="phone" placeholder="(XXX)XXX-XXXX" required>
+                <br>
 
-            <label for="email">Email: </label>
-            <input type="text" id="email" name="email" placeholder="jane.doe@example.com" required>
-            <br>
+                <label for="email">Email / Correo Electr&oacute;nico: </label>
+                <input type="text" id="email" name="email" placeholder="jane.doe@example.com" required>
+            </div>
 
             <!-- 
                 fName is user/client's first name
@@ -85,29 +77,32 @@
              -->
         </div>
 
+        <br>
+
         <!-- This section of form will collect incident info -->
         <div id="incidentInfo">
-            <h3 id="incidentHeader">Incident Information</h3>
+            <h3 class="formSectionHeaders">Incident Information / Informaci&oacute;n de Incidente</h3>
 
-            <label for="who">Who? (Full name if possible): </label>
-            <input type="text" id="who" name="who" placeholder="John Doe" required>
-            <br>
+            <div class="formSectionBodies">
+                <label for="who">Who? / Qui&eacute;n? (Full name if possible/Nombre completo si es posible): </label>
+                <input type="text" id="who" name="who" placeholder="John Doe" required>
+                <br>
 
-            <label for="what">What?: </label>
-            <br>
-            <textarea id="what" name="what" maxlength="2000" required></textarea>
-            <br>
+                <label for="what">What? / Qu&eacute;?: </label>
+                <br>
+                <textarea id="what" name="what" maxlength="2000" required></textarea>
+                <br>
 
-            <label for="iCity iState">Where?: </label>
-            <label for="iCity">City: </label>
-            <input type="text" id="iCity" name="incidentCity" placeholder="Las Vegas" required>
-            <label for="iState">State: </label>
-            <input type="text" id="incidentState" name="incidentState" placeholder="NV" required>
-            <br>
+                <label for="iCity iState">Where? / Donde? </label><br>
+                <label for="iCity">City / Ciudad: </label>
+                <input type="text" id="iCity" name="incidentCity" placeholder="Las Vegas" required>
+                <label for="iState">State / Estado: </label>
+                <input type="text" id="iState" name="incidentState" placeholder="NV" required>
+                <br>
 
-            <label for="iDate">When?: </label>
-            <input type="date" id="iDate" name="incidentDate" required>
-            <br>
+                <label for="iDate">When? / Cuando?: </label>
+                <input type="date" id="iDate" name="incidentDate" required>
+            </div>
 
             <!--
                 who is the name of the individual this incident is about
@@ -118,53 +113,59 @@
             -->
         </div>
 
+        <br>
+
         <!-- This section of form will collect witness and attorney info -->
         <div id="addQuestions">
-            <h3 id="addQuestionsHeader">Additional Questions</h3>
+            <h3 class="formSectionHeaders">Additional Questions / Preguntas Adicionales</h3>
 
-            <p id="witnessQuestion">Do you have a witness?</p>
-            <input type="radio" id="yWitness" name="witness" value="yesWitness">
-            <label for="yWitness">Yes</label><br>
+            <div class="formSectionBodies">
+                <p id="witnessQuestion">Do you have a witness? / Tienes un testigo?</p>
+                <input type="radio" id="yWitness" name="witness" value="yesWitness" onclick="openWitness()">
+                <label for="yWitness" id="yWitnessLabel">Yes / S&iacute;</label><br>
 
-            <input type="radio" id="nWitness" name="witness" value="noWitness">
-            <label for="nWitness">No</label><br>
+                <input type="radio" id="nWitness" name="witness" value="noWitness" onclick="closeWitness()">
+                <label for="nWitness" id="nWitnessLabel">No</label><br>
 
-            <!-- Collect witness info if user selects they have a witness -->
-            <div id="witnessInfo">
-                <p id="witnessHeader">Witness': </p>
+                <!-- Collect witness info if user selects they have a witness -->
+                <!-- Will pop up when selected yes witness and close when selected no witness -->
+                <div id="witnessInfo" style="display: none;">
+                    <p id="witnessHeader">Witness' / Testigo: </p>
 
-                <label for="wFirstName">First Name: </label>
-                <input type="text" id="wFirstName" name="witnessFirstName" placeholder="Jane" required>
+                    <label for="wFirstName" id="wFirstNameLabel">First Name / Primer Nombre: </label>
+                    <input type="text" id="wFirstName" name="witnessFirstName" placeholder="Jane" required>
 
-                <label for="wLastName">Last Name: </label>
-                <input type="text" id="wLastName" name="witnessLastName" placeholder="Doe" required>
-                <br>
+                    <label for="wLastName" id="wLastNameLabel">Last Name / Apellido: </label>
+                    <input type="text" id="wLastName" name="witnessLastName" placeholder="Doe" required>
+                    <br>
 
-                <label for="wPhone">Phone: </label>
-                <input type="text" id="wPhone" name="witnessPhoneNumber" placeholder="XXX-XXXX" required>
+                    <label for="wPhone" id="wPhoneLabel">Phone / Numero de Tel&eacute;fono: </label>
+                    <input type="text" id="wPhone" name="witnessPhoneNumber" placeholder="(XXX)XXX-XXXX" required>
 
-            </div>
+                </div>
 
-            <p id="attorneyQuestion">Do you have an attorney?</p>
-            <input type="radio" id="yAttorney" name="attorney" value="yesAttorney">
-            <label for="yAttorney">Yes</label><br>
+                <p id="attorneyQuestion">Do you have an attorney? / Tienes abogado?</p>
+                <input type="radio" id="yAttorney" name="attorney" value="yesAttorney" onclick="openAttorney()">
+                <label for="yAttorney" id="yAttorneyLabel">Yes / Si</label><br>
 
-            <input type="radio" id="nAttorney" name="attorney" value="noAttorney">
-            <label for="nAttorney">No</label>
+                <input type="radio" id="nAttorney" name="attorney" value="noAttorney" onclick="closeAttorney()">
+                <label for="nAttorney" id="nAttorneyLabel">No</label>
 
-            <!-- Collect attorney info if user selects they have an attorney -->
-            <div id="attorneyInfo">
-                <p id="attorneyHeader">Attorney's: </p>
+                <!-- Collect attorney info if user selects they have an attorney -->
+                <!-- Will pop up when selected yes attorney and close when selected no attorney -->
+                <div id="attorneyInfo" style="display: none;">
+                    <p id="attorneyHeader">Attorney's / Abogado: </p>
 
-                <label for="aName">Full Name: </label>
-                <input type="text" id="aName" name="attorneyFullName" placeholder="John M. Doe" required><br>
+                    <label for="aName" id="aFullNameLabel">Full Name / Nombre Completo: </label>
+                    <input type="text" id="aName" name="attorneyFullName" placeholder="John M. Doe" required><br>
 
-                <label for="aPractice">Practice Name: </label>
-                <input type="text" id="aPractice" name="attorneyPracticeName" placeholder="John M. Doe Law Group, LLC" required><br>
+                    <label for="aPractice" id="aPracticeLabel">Practice Name / Nombre de la Pr&aacute;ctica: </label>
+                    <input type="text" id="aPractice" name="attorneyPracticeName" placeholder="John M. Doe Law Group, LLC" required><br>
 
-                <label for="aWebsite">Website URL: </label>
-                <input type="url" id="aWebsite" name="attorneyWebsite" placeholder="https://example.com/" required><br>
+                    <label for="aWebsite" id="aWebsiteLabel">Website URL / URL del Sitio Web: </label>
+                    <input type="url" id="aWebsite" name="attorneyWebsite" placeholder="https://example.com/" required><br>
 
+                </div>
             </div>
 
             <!--
@@ -181,10 +182,13 @@
             -->
         </div>
 
-        <button type="submit" class="btn">SUBMIT</button>
+        <br>
+        <div class="buttonDIV">
+            <button type="submit" class="btn" id="submitButton" onclick="submitForm()">SUBMIT/Entregar</button>
+        </div>
     </form>
 
-    <script src="./JS/form.js" defer></script>
+    <script src="./JavaScript/form.js"></script>
     </div>
 </body>
 </html>
