@@ -1,4 +1,5 @@
 
+// shows data on window once submit button is clicked
 function submitForm() {
     DispWin = window.open('','NewWin', 'toolbar=no,status=no,width=700,height=500')
     // contact info
