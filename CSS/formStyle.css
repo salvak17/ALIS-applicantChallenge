@@ -1,0 +1,97 @@
+/* whole body style */
+body {
+    background-color: rgb(194, 182, 165);
+}
+
+/* form instructions and note style */
+#formInstructions {
+    padding-left: 1%;
+    padding-bottom: 1%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#formInstHeader {
+    font-size: 30px;
+    font-family: serif;
+}
+
+#formInstNote {
+    font-size: 18px;
+    font-style: italic;
+}
+
+/* form styling */
+form {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+label {
+    font-weight: bold;
+}
+
+#clientContactInfo {
+    background-color: ivory;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: 2px solid rgb(59, 57, 57);
+    border-radius: 25px;
+}
+
+#incidentInfo {
+    background-color: ivory;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: 2px solid rgb(59, 57, 57);
+    border-radius: 25px;
+}
+
+#addQuestions {
+    background-color: ivory;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: 2px solid rgb(59, 57, 57);
+    border-radius: 25px;
+}
+
+#what {
+    width: 500px;
+    height: 200px;
+}
+
+#witnessQuestion, #attorneyQuestion, #witnessHeader, #attorneyHeader {
+    font-weight: bold;
+}
+
+.formSectionHeaders {
+    font-size: 27px;
+    padding-left: 1%;
+}
+
+.formSectionBodies {
+    padding-left: 1%;
+    font-size: 18px;
+}
+
+/* submit button style */
+.buttonDIV {
+    padding-left: 0.5%;
+}
+
+#submitButton {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    background-color: rgb(67, 128, 70);
+    border: 1.5px;
+    border-style: solid;
+    border-color: rgb(7, 41, 7);
+    border-radius: 3px;
+}
+
+#submitButton:hover {
+    color: ivory;
+    background-color: rgb(4, 56, 4);
+    -webkit-animation-duration: .25s;
+    transition-duration: .25s;
+}
